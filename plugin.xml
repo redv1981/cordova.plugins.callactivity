@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	id="cordova.plugins.callactivity"
+	version="0.0.0">
+
+	<name>CallActivity</name>
+	<description>CallActivity Plugin</description>
+	<author>Drowning fish(redv1981@gmail.com)</author>
+	<keywords>activity, call</keywords>
+	<license>Apache 2.0</license>
+	<repo>https://github.com/redv1981/cordova.plugins.callactivity.git</repo>
+	<issue>https://github.com/redv1981/cordova.plugins.callactivity/issues</issue>
+
+	<js-module src="www/callActivity.js" name="callActivity">
+		<clobbers target="navigator.callActivity" />
+	</js-module>
+
+	<!-- android -->
+	<platform name="android">
+
+		<source-file src="src/android/CallActivity.java" target-dir="src/cordova/plugins/callactivity" />
+
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="CallActivity">
+				<param name="android-package" value="cordova.plugins.callactivity.CallActivity" />
+			</feature>
+		</config-file>
+
+	</platform>
+
+</plugin>
